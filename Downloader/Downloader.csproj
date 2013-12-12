@@ -50,7 +50,7 @@
     <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
   <PropertyGroup>
-    <ApplicationIcon>down_ico.ico</ApplicationIcon>
+    <ApplicationIcon>new_ico2.ico</ApplicationIcon>
   </PropertyGroup>
   <PropertyGroup>
     <SignManifests>false</SignManifests>
@@ -113,6 +113,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="down_ico.ico" />
+    <Content Include="new_ico2.ico" />
   </ItemGroup>
   <ItemGroup>
     <BootstrapperPackage Include=".NETFramework,Version=v4.5">

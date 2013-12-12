@@ -42,5 +42,12 @@ namespace Downloader
         {
             File.Delete(Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData) + "\\downloader.ini");
         }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            Form2 fh = new Form2();
+            fh.Hide();
+            this.Hide();
+        }
     }
 }
