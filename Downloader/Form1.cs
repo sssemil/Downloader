@@ -12,6 +12,7 @@ using System.Net;
 using System.Reflection;
 using System.Security.Permissions;
 using System.Diagnostics;
+using System.Media;
 
 namespace Downloader
 {
@@ -29,6 +30,16 @@ namespace Downloader
 
         public WebClient webClient = new WebClient();
 
+        private void ReportStatus(string statusMessage)
+        {
+            // If the caller passed in a message... 
+            if ((statusMessage != null) && (statusMessage != String.Empty))
+            {
+                // ...post the caller's message to the status bar. 
+                toolStripStatusLabel1.Text = statusMessage;
+            }
+        }
+
         private void button1_Click_1(object sender, EventArgs e)
         {
             button1.Enabled = false;
@@ -38,13 +49,23 @@ namespace Downloader
             {
                 MessageBox.Show("Please fill in all fields!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 button1.Enabled = true;
+                ReportStatus("Please fill in all fields!");
             }
             else
             {
-                Uri uri = new Uri(textBox1.Text);
-                string filename = System.IO.Path.GetFileName(uri.LocalPath);
-                string outf = textBox2.Text + "\\" + filename;
-                webClient.DownloadFileAsync(new Uri(textBox1.Text), outf);
+                try
+                {
+                    Uri uri = new Uri(textBox1.Text);
+                    string filename = System.IO.Path.GetFileName(uri.LocalPath);
+                    string outf = textBox2.Text + "\\" + filename; 
+                    ReportStatus("Starting...");
+                    webClient.DownloadFileAsync(new Uri(textBox1.Text), outf);
+                }
+                catch(Exception ex)
+                {
+                    ReportStatus(ex.Message);
+                    button1.Enabled = true;
+                }
             }
         }
 
@@ -52,14 +73,21 @@ namespace Downloader
         {
             progressBar1.Value = e.ProgressPercentage;
             label4.Text = e.ProgressPercentage + "%";
+            ReportStatus("Downloading..." + e.ProgressPercentage + "%");
         }
+
+        private SoundPlayer Player = new SoundPlayer();
 
         private void Completed(object sender, AsyncCompletedEventArgs e)
         {
-            MessageBox.Show("Done!");
             progressBar1.Value = 0;
             label4.Text = "0%";
             button1.Enabled = true;
+            ReportStatus("Done!");
+            this.WindowState = FormWindowState.Minimized;
+            this.WindowState = FormWindowState.Normal;
+            Player.SoundLocation = "file:///C:/Windows/Media/Windows%20Notify%20System%20Generic.wav";
+            Player.Play();
         }
 
         private void button2_Click(object sender, EventArgs e)
@@ -91,6 +119,7 @@ namespace Downloader
         {
             webClient.CancelAsync();
             progressBar1.Value = 0;
+            ReportStatus("Stoped!");
         }
 
         private void optionsToolStripMenuItem_Click(object sender, EventArgs e)
