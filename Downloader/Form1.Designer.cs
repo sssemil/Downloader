@@ -49,8 +49,8 @@
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
             this.toolStripStatusLabel1 = new System.Windows.Forms.ToolStripStatusLabel();
             this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
-            this.shapeContainer1 = new Microsoft.VisualBasic.PowerPacks.ShapeContainer();
-            this.lineShape1 = new Microsoft.VisualBasic.PowerPacks.LineShape();
+//            this.shapeContainer1 = new Microsoft.VisualBasic.PowerPacks.ShapeContainer();
+//            this.lineShape1 = new Microsoft.VisualBasic.PowerPacks.LineShape();
             this.menuStrip1.SuspendLayout();
             this.statusStrip1.SuspendLayout();
             this.SuspendLayout();
@@ -235,22 +235,22 @@
             // 
             // shapeContainer1
             // 
-            this.shapeContainer1.Location = new System.Drawing.Point(0, 0);
+            /*this.shapeContainer1.Location = new System.Drawing.Point(0, 0);
             this.shapeContainer1.Margin = new System.Windows.Forms.Padding(0);
-            this.shapeContainer1.Name = "shapeContainer1";
-            this.shapeContainer1.Shapes.AddRange(new Microsoft.VisualBasic.PowerPacks.Shape[] {
-            this.lineShape1});
-            this.shapeContainer1.Size = new System.Drawing.Size(507, 143);
+            this.shapeContainer1.Name = "shapeContainer1";*/
+ /*           this.shapeContainer1.Shapes.AddRange(new Microsoft.VisualBasic.PowerPacks.Shape[] {
+            this.lineShape1});*/
+            /*this.shapeContainer1.Size = new System.Drawing.Size(507, 143);
             this.shapeContainer1.TabIndex = 13;
-            this.shapeContainer1.TabStop = false;
+            this.shapeContainer1.TabStop = false;*/
             // 
             // lineShape1
             // 
-            this.lineShape1.Name = "lineShape1";
+            /*this.lineShape1.Name = "lineShape1";
             this.lineShape1.X1 = -7;
             this.lineShape1.X2 = 507;
             this.lineShape1.Y1 = 24;
-            this.lineShape1.Y2 = 24;
+            this.lineShape1.Y2 = 24;*/
             // 
             // Form1
             // 
@@ -269,7 +269,7 @@
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.menuStrip1);
-            this.Controls.Add(this.shapeContainer1);
+            //this.Controls.Add(this.shapeContainer1);
             this.MainMenuStrip = this.menuStrip1;
             this.MaximumSize = new System.Drawing.Size(523, 182);
             this.MinimumSize = new System.Drawing.Size(523, 182);
@@ -308,8 +308,8 @@
         private System.Windows.Forms.ToolStripMenuItem optionsToolStripMenuItem1;
         private System.Windows.Forms.ToolStripMenuItem exityToolStripMenuItem;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
-        private Microsoft.VisualBasic.PowerPacks.ShapeContainer shapeContainer1;
-        private Microsoft.VisualBasic.PowerPacks.LineShape lineShape1;
+        //private Microsoft.VisualBasic.PowerPacks.ShapeContainer shapeContainer1;
+        //private Microsoft.VisualBasic.PowerPacks.LineShape lineShape1;
     }
 }
 

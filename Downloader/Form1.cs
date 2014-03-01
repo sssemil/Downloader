@@ -174,6 +174,8 @@ namespace Downloader
         private string ln2;
         private void Form1_Load(object sender, EventArgs e)
         {
+            ln1 = Directory.GetParent(Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments)).FullName + "\\Downloads";
+            ln2 = "Auto";
             if (File.Exists(Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData) + "\\downloader.ini") == true)
             {
                 using (StreamReader reader = File.OpenText(Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData) + "\\downloader.ini"))
@@ -181,11 +183,6 @@ namespace Downloader
                     ln1 = reader.ReadLine();
                     ln2 = reader.ReadLine();
                 }
-            }
-            else
-            {
-                ln1 = Directory.GetParent(Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments)).FullName + "\\Downloads";
-                ln2 = "Auto";
             }
             textBox2.Text = ln1;
         }
