@@ -1,4 +1,18 @@
-﻿using System;
+﻿/*This file is part of Downloader.
+
+Downloader is free software: you can redistribute it and/or modify
+it under the terms of the GNU General Public License as published by
+the Free Software Foundation, either version 3 of the License, or
+(at your option) any later version.
+
+Downloader is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU General Public License for more details.
+
+You should have received a copy of the GNU General Public License
+along with Downloader.  If not, see <http://www.gnu.org/licenses/>.*/
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -155,7 +169,7 @@ namespace Downloader
             Assembly assembly = Assembly.GetExecutingAssembly();
             FileVersionInfo fvi = FileVersionInfo.GetVersionInfo(assembly.Location);
             string version = fvi.FileVersion;
-            MessageBox.Show(" Desined and created by sssemil inc.©\n Downloader by sssemil: " + version);
+            MessageBox.Show(" Desined and created under GNU General Public License by sssemil inc.© \n Downloader by sssemil: " + version);
         }
 
         private void button3_Click(object sender, EventArgs e)
